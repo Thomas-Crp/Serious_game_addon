@@ -71,6 +71,7 @@ body {
 
 .boum {
   animation: boum 0.6s forwards !important;
+  pointer-events: none;
 }
 
 .flash {
