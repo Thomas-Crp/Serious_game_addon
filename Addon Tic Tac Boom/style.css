@@ -31,6 +31,8 @@ body {
   width: 300px;
   transition: width 0.5s;
   animation: flotte 3s infinite;
+  filter: drop-shadow(0 0 10px #FF0073)
+  
 }
 
 #message {
@@ -54,10 +56,12 @@ body {
 #bouton:hover {
   background-color: #FF0073;
   color: #1C1D4F;
+  box-shadow: 0 0 10px #FF0073;
 }
 
 .rose {
   color: #FF0073;
+  text-shadow: 0 0 10px #FF0073;
 }
 
 /* animations du virus */
