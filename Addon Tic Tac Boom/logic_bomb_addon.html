@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -13,47 +13,47 @@
 
 <!-- ECRAN 1 : les joueurs -->
 <div id="ecran-joueurs">
-  <h1>NOUVELLE PARTIE</h1>
-  <p>NOMBRE DE JOUEURS :</p>
+  <h1>NEW GAME</h1>
+  <p>NUMBER OF PLAYERS:</p>
   <input type="number" id="nombre" min="2" max="8" value="2">
-  <button id="btn-nombre">VALIDER</button>
+  <button id="btn-nombre">CONFIRM</button>
   <div id="liste-noms"></div>
-  <button id="btn-commencer">COMMENCER</button>
+  <button id="btn-commencer">START</button>
 </div>
 
 <!-- ECRAN 2 : le theme -->
 <div id="ecran-theme">
   <h1 id="round-theme">ROUND 1 / 6</h1>
-  <button id="btn-theme">TIRER UN THÈME</button>
-  <img id="carte" src="" alt="carte theme">
+  <button id="btn-theme">DRAW A THEME</button>
+  <img id="carte" src="" alt="theme card">
   <p id="nom-theme"></p>
-  <p id="consigne">TIREZ UNE CARTE PUIS VALIDEZ</p>
-  <button id="btn-valider">VALIDER</button>
+  <p id="consigne">DRAW A CARD, THEN CONFIRM</p>
+  <button id="btn-valider">CONFIRM</button>
 </div>
 
 <!-- ECRAN 3 : le jeu -->
 <div id="ecran-jeu">
   <p id="round-jeu">ROUND 1 / 6</p>
-  <p id="statut">STATUT : DORMANT</p>
-  <p id="tour">AU TOUR DE :</p>
+  <p id="statut">STATUS: DORMANT</p>
+  <p id="tour">NOW PLAYING:</p>
   <p id="chrono">00:20</p>
 
   <div id="boite">
     <img id="virus" src="assets/virus_logo.svg" alt="virus">
-    <p id="message">SYSTÈME COMPROMIS</p>
+    <p id="message">SYSTEM COMPROMISED</p>
   </div>
 
-  <p id="aide">APPUIE SUR ESPACE QUAND TU AS TROUVÉ TON MOT</p>
+  <p id="aide">PRESS SPACE WHEN YOU FIND YOUR WORD</p>
   <button id="btn-pause">PAUSE</button>
-  <button id="bouton">JOUEUR SUIVANT</button>
+  <button id="bouton">NEXT PLAYER</button>
 </div>
 
 <!-- ECRAN 4 : fin du round ou fin de la partie -->
 <div id="ecran-fin">
-  <h1 id="titre-fin">FIN DU ROUND 1</h1>
-  <p>BUGS PAR JOUEUR :</p>
+  <h1 id="titre-fin">END OF ROUND 1</h1>
+  <p>BUGS PER PLAYER:</p>
   <ul id="scores"></ul>
-  <button id="btn-suivant">ROUND SUIVANT</button>
+  <button id="btn-suivant">NEXT ROUND</button>
 </div>
 
 <script src="script.js"></script>

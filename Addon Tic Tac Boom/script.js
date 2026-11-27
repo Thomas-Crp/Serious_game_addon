@@ -86,14 +86,14 @@ btnNombre.addEventListener("click", function () {
   let nb = Number(nombre.value);
 
   if (nb < 2) {
-    alert("Il faut au moins 2 joueurs !");
+    alert("You need at least 2 players!");
   } else if (nb > 8) {
-    alert("8 joueurs maximum !");
+    alert("8 players maximum!");
   } else {
     // on cree un champ pour chaque joueur
     listeNoms.innerHTML = "";
     for (let i = 1; i <= nb; i++) {
-      listeNoms.innerHTML += '<input type="text" class="nom" placeholder="JOUEUR ' + i + '">';
+      listeNoms.innerHTML += '<input type="text" class="nom" placeholder="PLAYER ' + i + '">';
     }
     btnCommencer.style.display = "inline-block";
   }
@@ -106,7 +106,7 @@ btnCommencer.addEventListener("click", function () {
 
   for (let i = 0; i < champs.length; i++) {
     if (champs[i].value == "") {
-      joueurs.push("JOUEUR " + (i + 1));
+      joueurs.push("PLAYER " + (i + 1));
     } else {
       joueurs.push(champs[i].value.toUpperCase());
     }
@@ -142,7 +142,7 @@ btnTheme.addEventListener("click", function () {
 
   carte.src = images[numero];
   carte.style.display = "block";
-  nomTheme.textContent = "THÈME : " + themeActuel;
+  nomTheme.textContent = "THEME: " + themeActuel;
   consigne.style.display = "block";
   btnValider.style.display = "inline-block";
   btnTheme.style.display = "none";
@@ -152,7 +152,7 @@ btnValider.addEventListener("click", function () {
   // le premier joueur change a chaque round
   joueurActuel = (round - 1) % joueurs.length;
   nbTours = 0;
-  roundJeu.textContent = "ROUND " + round + " / 6 · THÈME : " + themeActuel;
+  roundJeu.textContent = "ROUND " + round + " / 6 · THEME: " + themeActuel;
   afficherEcran("jeu");
   lancer();
 });
@@ -169,8 +169,8 @@ function lancer() {
   virus.style.width = "300px";
   message.style.display = "none";
 
-  tour.textContent = "AU TOUR DE : " + joueurs[joueurActuel];
-  statut.textContent = "STATUT : ARMÉE";
+  tour.textContent = "NOW PLAYING: " + joueurs[joueurActuel];
+  statut.textContent = "STATUS: ARMED";
   aide.style.display = "block";
   btnPause.style.display = "inline-block";
   btnPause.textContent = "PAUSE";
@@ -197,7 +197,7 @@ function seconde() {
 
 
   if (time == 5) {
-    statut.textContent = "STATUT : CRITIQUE";
+    statut.textContent = "STATUS: CRITICAL";
     chrono.classList.add("rose");
     virus.className = "danger";
     virus.style.width = "320px";
@@ -238,8 +238,8 @@ function trouve() {
   virus.className = "desamorce";
   virus.style.width = "300px";
   chrono.classList.remove("rose");
-  statut.textContent = "STATUT : DÉSAMORCÉE";
-  message.textContent = "MOT TROUVÉ !";
+  statut.textContent = "STATUS: DEFUSED";
+  message.textContent = "WORD FOUND!";
   message.style.display = "block";
   btnPause.style.display = "none";
 
@@ -258,20 +258,20 @@ function exploser() {
 
   virus.className = "boum";
   document.body.classList.add("flash");
-  statut.textContent = "STATUT : DÉTONÉE";
+  statut.textContent = "STATUS: DETONATED";
   btnPause.style.display = "none";
   aide.style.display = "none";
 
 
   setTimeout(function () {
     document.body.classList.remove("flash");
-    message.textContent = joueurs[joueurActuel] + " PREND UN BUG !";
+    message.textContent = joueurs[joueurActuel] + " TAKES A BUG!";
     message.style.display = "block";
 
     if (nbTours + 1 == joueurs.length) {
-      bouton.textContent = "FIN DU ROUND";
+      bouton.textContent = "END ROUND";
     } else {
-      bouton.textContent = "JOUEUR SUIVANT";
+      bouton.textContent = "NEXT PLAYER";
     }
     bouton.style.display = "inline-block";
   }, 600);
@@ -305,8 +305,8 @@ btnPause.addEventListener("click", function () {
   } else if (enPause == false) {
     clearInterval(timer);
     enPause = true;
-    btnPause.textContent = "REPRENDRE";
-    statut.textContent = "STATUT : EN PAUSE";
+    btnPause.textContent = "RESUME";
+    statut.textContent = "STATUS: PAUSED";
     virus.classList.add("pause");
   } else {
     timer = setInterval(seconde, 1000);
@@ -314,9 +314,9 @@ btnPause.addEventListener("click", function () {
     btnPause.textContent = "PAUSE";
     virus.classList.remove("pause");
     if (time <= 5) {
-      statut.textContent = "STATUT : CRITIQUE";
+      statut.textContent = "STATUS: CRITICAL";
     } else {
-      statut.textContent = "STATUT : ARMÉE";
+      statut.textContent = "STATUS: ARMED";
     }
   }
   btnPause.blur();
@@ -329,11 +329,11 @@ function afficherScores() {
   scores.innerHTML = "";
   for (let i = 0; i < joueurs.length; i++) {
     if (bugs[i] == 0) {
-      scores.innerHTML += "<li>" + joueurs[i] + " : 0 BUG</li>";
+      scores.innerHTML += "<li>" + joueurs[i] + ": 0 BUGS</li>";
     } else if (bugs[i] == 1) {
-      scores.innerHTML += "<li>" + joueurs[i] + " : 1 BUG</li>";
+      scores.innerHTML += "<li>" + joueurs[i] + ": 1 BUG</li>";
     } else {
-      scores.innerHTML += "<li>" + joueurs[i] + " : " + bugs[i] + " BUGS</li>";
+      scores.innerHTML += "<li>" + joueurs[i] + ": " + bugs[i] + " BUGS</li>";
     }
   }
 }
@@ -358,14 +358,14 @@ function finRound() {
     }
 
     if (egalite == true) {
-      titreFin.textContent = "FIN DE LA PARTIE · ÉGALITÉ !";
+      titreFin.textContent = "GAME OVER · IT'S A TIE!";
     } else {
-      titreFin.textContent = "FIN DE LA PARTIE · " + joueurs[gagnant] + " GAGNE !";
+      titreFin.textContent = "GAME OVER · " + joueurs[gagnant] + " WINS!";
     }
-    btnSuivant.textContent = "NOUVELLE PARTIE";
+    btnSuivant.textContent = "NEW GAME";
   } else {
-    titreFin.textContent = "FIN DU ROUND " + round;
-    btnSuivant.textContent = "LANCER LE ROUND " + (round + 1);
+    titreFin.textContent = "END OF ROUND " + round;
+    btnSuivant.textContent = "START ROUND " + (round + 1);
   }
 
   afficherEcran("fin");
