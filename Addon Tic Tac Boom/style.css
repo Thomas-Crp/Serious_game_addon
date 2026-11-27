@@ -20,7 +20,7 @@ body {
 }
 
 #boite {
-  height: 450px;
+  height: 400px;
   position: relative;
   display: flex;
   align-items: center;
@@ -43,7 +43,9 @@ body {
   color: #FF0073;
 }
 
-#bouton {
+/* tous les boutons */
+button {
+  margin: 10px;
   padding: 15px 40px;
   font-family: "JetBrains Mono", monospace;
   font-size: 16px;
@@ -53,10 +55,71 @@ body {
   cursor: pointer;
 }
 
-#bouton:hover {
+button:hover {
   background-color: #FF0073;
   color: #1C1D4F;
   box-shadow: 0 0 10px #FF0073;
+}
+
+/* les ecrans (cachés au debut, le js les affiche) */
+#ecran-theme, #ecran-jeu, #ecran-fin {
+  display: none;
+}
+
+h1 {
+  color: #FF0073;
+  text-shadow: 0 0 10px #FF0073;
+}
+
+input {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 250px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 16px;
+  text-align: center;
+  color: #F3F5FB;
+  background-color: transparent;
+  border: 2px solid #F3F5FB;
+}
+
+#btn-commencer, #consigne, #btn-valider, #bouton {
+  display: none;
+}
+
+#carte {
+  display: none;
+  width: 220px;
+  margin: 20px auto;
+  filter: drop-shadow(0 0 15px #FF0073);
+  animation: apparition 0.5s;
+}
+
+#nom-theme {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#round-jeu, #aide {
+  font-size: 12px;
+  color: gray;
+}
+
+#tour {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#scores {
+  list-style: none;
+  padding: 0;
+  font-size: 20px;
+}
+
+@keyframes apparition {
+  0% { transform: scale(0.5) rotate(-10deg); opacity: 0; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
 }
 
 .rose {
@@ -101,4 +164,9 @@ body {
 @keyframes flash {
   0% { background-color: white; }
   100% { background-color: #1C1D4F; }
+}
+
+/* pause (tout en bas pour passer devant .danger et .vite) */
+.pause {
+  animation-play-state: paused !important;
 }
