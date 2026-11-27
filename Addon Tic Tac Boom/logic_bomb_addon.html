@@ -10,15 +10,51 @@
 <body>
 
 <p id="titre">LOGIC_BOMB.EXE</p>
-<p id="statut">STATUT : DORMANT</p>
-<p id="chrono">00:20</p>
 
-<div id="boite">
-  <img id="virus" src="assets/virus_logo.svg" alt="virus">
-  <p id="message">SYSTÈME COMPROMIS</p>
+<!-- ECRAN 1 : les joueurs -->
+<div id="ecran-joueurs">
+  <h1>NOUVELLE PARTIE</h1>
+  <p>NOMBRE DE JOUEURS :</p>
+  <input type="number" id="nombre" min="2" max="8" value="2">
+  <button id="btn-nombre">VALIDER</button>
+  <div id="liste-noms"></div>
+  <button id="btn-commencer">COMMENCER</button>
 </div>
 
-<button id="bouton">LANCER</button>
+<!-- ECRAN 2 : le theme -->
+<div id="ecran-theme">
+  <h1 id="round-theme">ROUND 1 / 6</h1>
+  <button id="btn-theme">TIRER UN THÈME</button>
+  <img id="carte" src="" alt="carte theme">
+  <p id="nom-theme"></p>
+  <p id="consigne">TIREZ UNE CARTE PUIS VALIDEZ</p>
+  <button id="btn-valider">VALIDER</button>
+</div>
+
+<!-- ECRAN 3 : le jeu -->
+<div id="ecran-jeu">
+  <p id="round-jeu">ROUND 1 / 6</p>
+  <p id="statut">STATUT : DORMANT</p>
+  <p id="tour">AU TOUR DE :</p>
+  <p id="chrono">00:20</p>
+
+  <div id="boite">
+    <img id="virus" src="assets/virus_logo.svg" alt="virus">
+    <p id="message">SYSTÈME COMPROMIS</p>
+  </div>
+
+  <p id="aide">APPUIE SUR ESPACE QUAND TU AS TROUVÉ TON MOT</p>
+  <button id="btn-pause">PAUSE</button>
+  <button id="bouton">JOUEUR SUIVANT</button>
+</div>
+
+<!-- ECRAN 4 : fin du round ou fin de la partie -->
+<div id="ecran-fin">
+  <h1 id="titre-fin">FIN DU ROUND 1</h1>
+  <p>BUGS PAR JOUEUR :</p>
+  <ul id="scores"></ul>
+  <button id="btn-suivant">ROUND SUIVANT</button>
+</div>
 
 <script src="script.js"></script>
 </body>
