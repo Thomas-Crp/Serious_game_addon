@@ -235,7 +235,7 @@ function trouve() {
   clearInterval(timer);
   enJeu = false;
 
-  virus.className = "";
+  virus.className = "desamorce";
   virus.style.width = "300px";
   chrono.classList.remove("rose");
   statut.textContent = "STATUT : DÉSAMORCÉE";

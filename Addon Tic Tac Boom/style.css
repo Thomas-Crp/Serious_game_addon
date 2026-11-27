@@ -195,8 +195,16 @@ input {
   pointer-events: none;
 }
 
+.desamorce {
+  animation: desamorce 0.4s forwards !important;
+}
+
 .flash {
   animation: flash 0.5s;
+}
+
+@keyframes desamorce {
+  100% { transform: scale(0.6); opacity: 0.15; filter: grayscale(1); }
 }
 
 @keyframes flotte {
